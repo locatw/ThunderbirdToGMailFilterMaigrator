@@ -1,0 +1,2 @@
+# ThunderbirdToGMailFilterMaigrator
+ThunderbirdのメールフィルターをGMailに移行するツール
