@@ -54,6 +54,7 @@
     <Compile Include="ThunderbirdFilterTest.fs" />
     <Content Include="packages.config" />
     <Content Include="app.config" />
+    <Compile Include="IMapUtf7Test.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
