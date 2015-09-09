@@ -1,9 +1,27 @@
 ﻿module Main
 
-let writeToFile filterSetting (filePath : string) =
-    use file = System.IO.File.CreateText(filePath)
-    fprintfn file "%A" filterSetting
+open System
 
-writeToFile
-    (ThunderbirdFilter.load @"D:\work\mail_filter\thunderbird_filter.txt")
-    @"D:\work\mail_filter\output.txt"
+Console.WriteLine("Thunderbird filter file:")
+let thunderbirdFilterFile = Console.ReadLine()
+
+Console.WriteLine("Output to:")
+let gmailFilterFile = Console.ReadLine()
+
+Console.WriteLine("Author name:")
+let authorName = Console.ReadLine()
+
+Console.WriteLine("Author's email address:")
+let authorEmail = Console.ReadLine()
+
+try
+
+    let thunderbirdFilter = ThunderbirdFilter.load(thunderbirdFilterFile)
+    let feed = Migrator.migrate thunderbirdFilter { Name = authorName; Email = authorEmail; }
+
+    GMailFilter.writeToFile gmailFilterFile feed
+with
+    | :? System.IO.FileNotFoundException ->
+        failwith "Thunderbird filter file not found"
+    | :? System.Exception as e ->
+        failwith (String.Format("unknown exception occurred: {0}", e.Message))
