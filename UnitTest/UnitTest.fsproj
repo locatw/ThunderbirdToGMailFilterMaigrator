@@ -55,6 +55,7 @@
     <Content Include="packages.config" />
     <Content Include="app.config" />
     <Compile Include="IMapUtf7Test.fs" />
+    <Compile Include="MigratorTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">

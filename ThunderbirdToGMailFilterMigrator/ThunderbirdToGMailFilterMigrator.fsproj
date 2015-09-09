@@ -60,6 +60,7 @@
     <Compile Include="ThunderbirdFilter.fs" />
     <Compile Include="GMailFilter.fs" />
     <Compile Include="IMapUtf7.fs" />
+    <Compile Include="Migrator.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
