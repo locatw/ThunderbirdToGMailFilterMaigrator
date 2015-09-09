@@ -1,2 +1,4 @@
 # ThunderbirdToGMailFilterMaigrator
 ThunderbirdのメールフィルターをGMailに移行するツール
+
+※一部のフィルタ設定のみ移行可能。
