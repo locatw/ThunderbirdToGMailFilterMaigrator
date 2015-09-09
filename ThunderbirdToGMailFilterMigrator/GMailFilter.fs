@@ -1,7 +1,6 @@
 ﻿module GMailFilter
 
 open System.Collections.Generic
-open System.Linq
 open System.Xml.Linq
 
 type Author = {
